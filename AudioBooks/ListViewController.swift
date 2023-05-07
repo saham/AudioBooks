@@ -2,18 +2,19 @@ import UIKit
 
 class ListViewController: UIViewController {
 
+    var model:listing = listing()
+    let API = APICaller()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityHeightConstraint: NSLayoutConstraint!
-    var model:listing = listing()
-    let API = APICaller()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         activityHeightConstraint.constant = 0
         activityIndicator.isHidden = true
-        API.fetchData { res in
+        API.fetchData(paginating: false) { res in
             switch res {
             case .success(let listing):
                 self.model = listing
@@ -25,23 +26,23 @@ class ListViewController: UIViewController {
             }
         }
     }
-    
 }
+
 extension ListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+        if position > (tableView.contentSize.height - scrollView.frame.size.height) {
             activityIndicator.startAnimating()
             activityHeightConstraint.constant = 20
             activityIndicator.isHidden = false
             guard !API.isPaging else {return}
-            
             API.fetchData(paginating: true) {[weak self] res in
                 switch res {
                 case .success(let listing):
                     if let newListing = listing.results {
                         self?.model.results?.append(contentsOf: newListing)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        // It simulates 1.0 second delay in network call
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                             self?.activityIndicator.stopAnimating()
                             self?.activityHeightConstraint.constant = 0
                             self?.activityIndicator.isHidden = true
@@ -69,9 +70,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let DVC = sb.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsViewController
-        DVC.podcast =  model.results?[indexPath.row]
-        navigationController?.pushViewController(DVC, animated: true)
+        if let DVC = sb.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsViewController{
+            DVC.podcast =  model.results?[indexPath.row]
+            navigationController?.pushViewController(DVC, animated: true)
+        }
     }
 }
 
