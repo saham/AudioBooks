@@ -7,7 +7,7 @@ struct result {
     var thumbnail: String?
     var publisher: String?
     var description_highlighted: String?
-    var id: String?
+    var id: String? // Assumed it's unique per podcast
     var isFavorite: Bool {
         set {
             UserDefaults.standard.setValue(newValue, forKey: id ?? "default")
