@@ -1,0 +1,16 @@
+PODS:
+  - PodcastAPI (1.1.7)
+
+DEPENDENCIES:
+  - PodcastAPI
+
+SPEC REPOS:
+  trunk:
+    - PodcastAPI
+
+SPEC CHECKSUMS:
+  PodcastAPI: 7c97bb83a5d5900c329b44d5ebd1302aca5df952
+
+PODFILE CHECKSUM: 490ffad4ad518c2e64e2f40c5817cbee6a57ef28
+
+COCOAPODS: 1.12.0

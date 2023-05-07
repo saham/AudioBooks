@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D5622007BD10981C5136D92 /* Pods_AudioBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF92D550244ABC5738A1CD16 /* Pods_AudioBooks.framework */; };
+		CE4D75FC2A08438700D61176 /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D75FB2A08438700D61176 /* Extra.swift */; };
+		CED1D31B2A08071300340274 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1D31A2A08071300340274 /* Model.swift */; };
+		CEE152602A0837FD004124D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1525F2A0837FD004124D0 /* AppDelegate.swift */; };
+		CEE152622A0837FD004124D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE152612A0837FD004124D0 /* SceneDelegate.swift */; };
+		CEE152672A0837FD004124D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE152652A0837FD004124D0 /* Main.storyboard */; };
+		CEE152692A0837FD004124D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE152682A0837FD004124D0 /* Assets.xcassets */; };
+		CEE1526C2A0837FD004124D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE1526A2A0837FD004124D0 /* LaunchScreen.storyboard */; };
+		CEE152762A0838A2004124D0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE152752A0838A2004124D0 /* ListViewController.swift */; };
+		CEE152782A0838B0004124D0 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE152772A0838B0004124D0 /* DetailsViewController.swift */; };
+		CEE1527A2A083980004124D0 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE152792A083980004124D0 /* ListTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C03018F3FF264DEEE193B95 /* Pods-AudioBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioBooks.debug.xcconfig"; path = "Target Support Files/Pods-AudioBooks/Pods-AudioBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		6A4E141825F4D21916476F61 /* Pods-AudioBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioBooks.release.xcconfig"; path = "Target Support Files/Pods-AudioBooks/Pods-AudioBooks.release.xcconfig"; sourceTree = "<group>"; };
+		CE4D75FB2A08438700D61176 /* Extra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
+		CED1D31A2A08071300340274 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CEE1525C2A0837FD004124D0 /* AudioBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE1525F2A0837FD004124D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEE152612A0837FD004124D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEE152662A0837FD004124D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEE152682A0837FD004124D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEE1526B2A0837FD004124D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEE1526D2A0837FD004124D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE152752A0838A2004124D0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		CEE152772A0838B0004124D0 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		CEE152792A083980004124D0 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		CF92D550244ABC5738A1CD16 /* Pods_AudioBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEE152592A0837FD004124D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5622007BD10981C5136D92 /* Pods_AudioBooks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		288EF3C62B24BEEA4BFEDF57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C03018F3FF264DEEE193B95 /* Pods-AudioBooks.debug.xcconfig */,
+				6A4E141825F4D21916476F61 /* Pods-AudioBooks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3079DD4F5C7EF1C98770E259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF92D550244ABC5738A1CD16 /* Pods_AudioBooks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEE152532A0837FD004124D0 = {
+			isa = PBXGroup;
+			children = (
+				CEE1525E2A0837FD004124D0 /* AudioBooks */,
+				CEE1525D2A0837FD004124D0 /* Products */,
+				288EF3C62B24BEEA4BFEDF57 /* Pods */,
+				3079DD4F5C7EF1C98770E259 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEE1525D2A0837FD004124D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1525C2A0837FD004124D0 /* AudioBooks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEE1525E2A0837FD004124D0 /* AudioBooks */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1525F2A0837FD004124D0 /* AppDelegate.swift */,
+				CEE152612A0837FD004124D0 /* SceneDelegate.swift */,
+				CEE152652A0837FD004124D0 /* Main.storyboard */,
+				CEE152682A0837FD004124D0 /* Assets.xcassets */,
+				CEE1526A2A0837FD004124D0 /* LaunchScreen.storyboard */,
+				CEE1526D2A0837FD004124D0 /* Info.plist */,
+				CEE152752A0838A2004124D0 /* ListViewController.swift */,
+				CEE152772A0838B0004124D0 /* DetailsViewController.swift */,
+				CEE152792A083980004124D0 /* ListTableViewCell.swift */,
+				CE4D75FB2A08438700D61176 /* Extra.swift */,
+				CED1D31A2A08071300340274 /* Model.swift */,
+			);
+			path = AudioBooks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEE1525B2A0837FD004124D0 /* AudioBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEE152702A0837FD004124D0 /* Build configuration list for PBXNativeTarget "AudioBooks" */;
+			buildPhases = (
+				5A97B4B4F8AE23FCC8711C4A /* [CP] Check Pods Manifest.lock */,
+				CEE152582A0837FD004124D0 /* Sources */,
+				CEE152592A0837FD004124D0 /* Frameworks */,
+				CEE1525A2A0837FD004124D0 /* Resources */,
+				4A7FD83448031B757DC05E8F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioBooks;
+			productName = AudioBooks;
+			productReference = CEE1525C2A0837FD004124D0 /* AudioBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEE152542A0837FD004124D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CEE1525B2A0837FD004124D0 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = CEE152572A0837FD004124D0 /* Build configuration list for PBXProject "AudioBooks" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEE152532A0837FD004124D0;
+			productRefGroup = CEE1525D2A0837FD004124D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEE1525B2A0837FD004124D0 /* AudioBooks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEE1525A2A0837FD004124D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE1526C2A0837FD004124D0 /* LaunchScreen.storyboard in Resources */,
+				CEE152692A0837FD004124D0 /* Assets.xcassets in Resources */,
+				CEE152672A0837FD004124D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A7FD83448031B757DC05E8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioBooks/Pods-AudioBooks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioBooks/Pods-AudioBooks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioBooks/Pods-AudioBooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A97B4B4F8AE23FCC8711C4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioBooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEE152582A0837FD004124D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED1D31B2A08071300340274 /* Model.swift in Sources */,
+				CEE152602A0837FD004124D0 /* AppDelegate.swift in Sources */,
+				CEE152622A0837FD004124D0 /* SceneDelegate.swift in Sources */,
+				CE4D75FC2A08438700D61176 /* Extra.swift in Sources */,
+				CEE152762A0838A2004124D0 /* ListViewController.swift in Sources */,
+				CEE152782A0838B0004124D0 /* DetailsViewController.swift in Sources */,
+				CEE1527A2A083980004124D0 /* ListTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEE152652A0837FD004124D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEE152662A0837FD004124D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEE1526A2A0837FD004124D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEE1526B2A0837FD004124D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEE1526E2A0837FD004124D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEE1526F2A0837FD004124D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEE152712A0837FD004124D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C03018F3FF264DEEE193B95 /* Pods-AudioBooks.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VZQL275L7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioBooks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Organization.AudioBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEE152722A0837FD004124D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A4E141825F4D21916476F61 /* Pods-AudioBooks.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VZQL275L7V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioBooks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Organization.AudioBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEE152572A0837FD004124D0 /* Build configuration list for PBXProject "AudioBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE1526E2A0837FD004124D0 /* Debug */,
+				CEE1526F2A0837FD004124D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEE152702A0837FD004124D0 /* Build configuration list for PBXNativeTarget "AudioBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEE152712A0837FD004124D0 /* Debug */,
+				CEE152722A0837FD004124D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEE152542A0837FD004124D0 /* Project object */;
+}
