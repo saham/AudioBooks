@@ -6,7 +6,7 @@ struct result {
     var title_original: String?
     var thumbnail: String?
     var publisher: String?
-    var description_highlighted: String?// Details view
+    var description_highlighted: String?
     var id: String?
     var isFavorite: Bool {
         set {

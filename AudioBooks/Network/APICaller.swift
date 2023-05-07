@@ -1,18 +1,16 @@
 import Foundation
 import PodcastAPI
 class  APICaller {
-    var isPaging:Bool = false
-    func fetchData(paginating:Bool,completion: @escaping(Result<listing, Error>) -> Void) {
-        if paginating {
-            isPaging = true
-        }
+   public var isPaging:Bool = false
+    func fetchData(completion: @escaping(Result<listing, Error>) -> Void) {
+        isPaging = true
         var JSONResult = [result]()
         var JSONListings = listing()
-        let apiKey = ProcessInfo.processInfo.environment["LISTEN_API_KEY", default: ""]
+        let apiKey = ProcessInfo.processInfo.environment[stringConstant.jsonKeys.LISTEN_API_KEY.rawValue, default: ""]
         let client = PodcastAPI.Client(apiKey: apiKey, synchronousRequest: true)
         var parameters: [String: String] = [:]
-        parameters["q"] = "startup"
-        parameters["sort_by_date"] = "1"
+        parameters["q"] = stringConstant.jsonKeys.startup.rawValue
+        parameters[stringConstant.jsonKeys.sort_by_date.rawValue] = "1"
         client.search(parameters: parameters) { response in
             if let error = response.error {
                 switch (error) {
@@ -28,9 +26,7 @@ class  APICaller {
                     JSONResult = self.JsonToListing(from: json)
                     JSONListings.results = JSONResult
                     completion(.success(JSONListings))
-                    if paginating {
-                        self.isPaging = false
-                    }
+                    self.isPaging = false
                 }
             }
         }

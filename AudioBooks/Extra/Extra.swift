@@ -26,6 +26,13 @@ struct stringConstant {
         case id
         case podcast
         case publisher = "publisher_original"
+        case LISTEN_API_KEY
+        case startup
+        case sort_by_date
+    }
+    enum word: String {
+        case Favourited
+        case Favourite
     }
 }
 func imageDownload(from urlString: String?,completion:  @escaping (UIImage?)->Void) {

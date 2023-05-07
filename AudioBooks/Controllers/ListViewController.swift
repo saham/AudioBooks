@@ -1,20 +1,27 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    
+    // MARK: - Variables
     var model:listing = listing()
     let API = APICaller()
     
+    // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var activityHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - View Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        activityHeightConstraint.constant = 0
-        activityIndicator.isHidden = true
-        API.fetchData(paginating: false) { res in
+        setupActivity()
+        API.fetchData{ res in
             switch res {
             case .success(let listing):
                 self.model = listing
@@ -23,20 +30,29 @@ class ListViewController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-            }
+            }   
         }
     }
+    
+    // MARK: - Setup
+    func setupActivity(isRunning :Bool = false) {
+        if isRunning {
+            activityIndicator.stopAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        activityHeightConstraint.constant = isRunning ? 20 : 0
+        activityIndicator.isHidden = !isRunning
+    }
 }
-
+// MARK: - ScrollView
 extension ListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
-        if position > (tableView.contentSize.height - scrollView.frame.size.height) {
-            activityIndicator.startAnimating()
-            activityHeightConstraint.constant = 20
-            activityIndicator.isHidden = false
+        if position > (tableView.contentSize.height  + 200  - scrollView.frame.size.height) {
+           setupActivity(isRunning:  true)
             guard !API.isPaging else {return}
-            API.fetchData(paginating: true) {[weak self] res in
+            API.fetchData {[weak self] res in
                 switch res {
                 case .success(let listing):
                     if let newListing = listing.results {
@@ -56,6 +72,8 @@ extension ListViewController: UIScrollViewDelegate {
         }
     }
 }
+
+// MARK: - tableView
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.results?.count ?? 0

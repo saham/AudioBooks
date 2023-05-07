@@ -69,6 +69,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEB9C1AF2A0825CC00E026F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1526A2A0837FD004124D0 /* LaunchScreen.storyboard */,
+				CEE152652A0837FD004124D0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEB9C1B02A0825DB00E026F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEE152752A0838A2004124D0 /* ListViewController.swift */,
+				CEE152792A083980004124D0 /* ListTableViewCell.swift */,
+				CEE152772A0838B0004124D0 /* DetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEB9C1B12A0825F000E026F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CED1D31A2A08071300340274 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEB9C1B22A0825FA00E026F9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9C1AD2A081A8700E026F9 /* APICaller.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CEB9C1B32A08260B00E026F9 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				CE4D75FB2A08438700D61176 /* Extra.swift */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		CEB9C1B42A08261600E026F9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CEE152682A0837FD004124D0 /* Assets.xcassets */,
+				CEE152612A0837FD004124D0 /* SceneDelegate.swift */,
+				CEE1525F2A0837FD004124D0 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		CEE152532A0837FD004124D0 = {
 			isa = PBXGroup;
 			children = (
@@ -90,18 +143,13 @@
 		CEE1525E2A0837FD004124D0 /* AudioBooks */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1525F2A0837FD004124D0 /* AppDelegate.swift */,
-				CEE152612A0837FD004124D0 /* SceneDelegate.swift */,
-				CEE152652A0837FD004124D0 /* Main.storyboard */,
-				CEE152682A0837FD004124D0 /* Assets.xcassets */,
-				CEE1526A2A0837FD004124D0 /* LaunchScreen.storyboard */,
+				CEB9C1B42A08261600E026F9 /* Application */,
+				CEB9C1B32A08260B00E026F9 /* Extra */,
+				CEB9C1B22A0825FA00E026F9 /* Network */,
+				CEB9C1B12A0825F000E026F9 /* Model */,
+				CEB9C1B02A0825DB00E026F9 /* Controllers */,
+				CEB9C1AF2A0825CC00E026F9 /* View */,
 				CEE1526D2A0837FD004124D0 /* Info.plist */,
-				CEE152752A0838A2004124D0 /* ListViewController.swift */,
-				CEE152772A0838B0004124D0 /* DetailsViewController.swift */,
-				CEE152792A083980004124D0 /* ListTableViewCell.swift */,
-				CE4D75FB2A08438700D61176 /* Extra.swift */,
-				CED1D31A2A08071300340274 /* Model.swift */,
-				CEB9C1AD2A081A8700E026F9 /* APICaller.swift */,
 			);
 			path = AudioBooks;
 			sourceTree = "<group>";
