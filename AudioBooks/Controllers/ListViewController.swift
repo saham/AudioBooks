@@ -45,37 +45,6 @@ class ListViewController: UIViewController {
         activityIndicator.isHidden = !isRunning
     }
 }
-// MARK: - ScrollView
-extension ListViewController: UIScrollViewDelegate {
-    /**
-     When user scrolls the end of tableView, we reload another set of data
-     - Since we get 10 listings at a time, we add all 10 listings to our model
-     */
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        if position > (tableView.contentSize.height  + 200  - scrollView.frame.size.height) {
-           setupActivity(isRunning:  true)
-            guard !API.isPaging else {return}
-            API.fetchData {[weak self] res in
-                switch res {
-                case .success(let listing):
-                    if let newListing = listing.results {
-                        self?.model.results?.append(contentsOf: newListing)
-                        // It simulates 1.0 second delay in network call
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            self?.activityIndicator.stopAnimating()
-                            self?.activityHeightConstraint.constant = 0
-                            self?.activityIndicator.isHidden = true
-                            self?.tableView.reloadData()
-                        }
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-        }
-    }
-}
 
 // MARK: - tableView
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -95,6 +64,34 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         if let DVC = sb.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsViewController{
             DVC.podcast =  model.results?[indexPath.row]
             navigationController?.pushViewController(DVC, animated: true)
+        }
+    }
+    /**
+     When user scrolls to the end of tableView, we reload another set of data
+     -  We get 10 listings at a time, we add all 10 listings to our model
+     */
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let count = model.results?.count, count - 1 == indexPath.row {
+            setupActivity(isRunning:  true)
+            guard !API.isPaging else {return}
+            API.fetchData {[weak self] res in
+                switch res {
+                case .success(let listing):
+                    if let newListing = listing.results {
+                        self?.model.results?.append(contentsOf: newListing)
+                        // It simulates 1.0 second delay in network call
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self?.activityIndicator.stopAnimating()
+                            self?.activityHeightConstraint.constant = 0
+                            self?.activityIndicator.isHidden = true
+                            self?.tableView.reloadData()
+                        }
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
 }
