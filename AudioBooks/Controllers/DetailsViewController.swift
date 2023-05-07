@@ -28,13 +28,17 @@ class DetailsViewController: UIViewController {
             favoriteButton.setTitle(isFavorite ? stringConstant.word.Favourited.rawValue : stringConstant.word.Favourite.rawValue, for: [])
         }
     }
+    
     func config() {
         setFavoriteButton()
         favoriteButton.layer.cornerRadius = 12
         titleLabel.text = podcast?.title_original
         publisherLabel.text = podcast?.publisher
         detailImageView.layer.cornerRadius = 12
-        // Mobile does not modify the received HTML text. It's left to backend to add formatting tags to the string
+        /*
+         Mobile does not modify the received HTML text.
+         It's left to backend to add formatting tags to the string
+         */
         descriptionTextView.attributedText = podcast?.description_highlighted?.htmlToAttributedString
         imageDownload(from: podcast?.thumbnail) { image in
             DispatchQueue.main.async {
