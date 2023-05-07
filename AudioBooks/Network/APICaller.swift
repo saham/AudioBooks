@@ -1,7 +1,7 @@
 import Foundation
 import PodcastAPI
 class  APICaller {
-   public var isPaging:Bool = false
+   public var isPaging: Bool = false
     /**
      Fetches data from a public API. It returns data if succeed or error otherwise
      */
@@ -49,9 +49,7 @@ class  APICaller {
             let publisher = podcast?[stringConstant.jsonKeys.publisher.rawValue] as? String
             let res = result(title_original: title_original, thumbnail: thumbnail, publisher: publisher, description_highlighted: description_highlighted, id: id)
             returnValue.append(res)
-            
         }
         return returnValue
-        
     }
 }

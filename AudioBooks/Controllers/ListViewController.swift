@@ -21,8 +21,8 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupActivity()
-        API.fetchData{ res in
-            switch res {
+        API.fetchData{ data in
+            switch data {
             case .success(let listing):
                 self.model = listing
                 DispatchQueue.main.async {

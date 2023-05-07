@@ -47,5 +47,4 @@ func imageDownload(from urlString: String?,completion:  @escaping (UIImage?)->Vo
             completion(UIImage(data: imageData))
         }.resume()
     }
-    
 }
