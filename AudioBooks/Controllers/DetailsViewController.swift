@@ -2,7 +2,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     // MARK: - Variables
-    var podcast: result?
+    var podcast: podcast?
     
     // MARK: - Outlet
     @IBOutlet weak var titleLabel: UILabel!

@@ -7,8 +7,7 @@ class  APICaller {
      */
     func fetchData(completion: @escaping(Result<listing, Error>) -> Void) {
         isPaging = true
-        var JSONResult = [result]()
-        var JSONListings = listing()
+        var AllListings = listing()
         let apiKey = ProcessInfo.processInfo.environment[stringConstant.jsonKeys.LISTEN_API_KEY.rawValue, default: ""]
         let client = PodcastAPI.Client(apiKey: apiKey, synchronousRequest: true)
         var parameters: [String: String] = [:]
@@ -26,28 +25,27 @@ class  APICaller {
                 }
             } else {
                 if let json = response.toJson() {
-                    JSONResult = self.JsonToListing(from: json)
-                    JSONListings.results = JSONResult
-                    completion(.success(JSONListings))
+                    AllListings.podcasts = self.JsonToListing(from: json)
+                    completion(.success(AllListings))
                     self.isPaging = false
                 }
             }
         }
     }
     /**
-     This functions takes JSON and returns an array of `result`.
+     This functions takes JSON and returns an array of `podcast`.
      */
-    func JsonToListing(from json: JSON) -> [result] {
-        var returnValue = [result]()
+    func JsonToListing(from json: JSON) -> [podcast] {
+        var returnValue = [podcast]()
         let results  = json[stringConstant.jsonKeys.results.rawValue].arrayValue
         for res in results {
             let title_original = res[stringConstant.jsonKeys.titleOriginal.rawValue].string
             let thumbnail = res[stringConstant.jsonKeys.thumbnail.rawValue].string
             let description_highlighted = res[stringConstant.jsonKeys.descriptionHighlighted.rawValue].string
             let id = res[stringConstant.jsonKeys.id.rawValue].string
-            let podcast = res[stringConstant.jsonKeys.podcast.rawValue].object as? [String:Any]
-            let publisher = podcast?[stringConstant.jsonKeys.publisher.rawValue] as? String
-            let res = result(title_original: title_original, thumbnail: thumbnail, publisher: publisher, description_highlighted: description_highlighted, id: id)
+            let Podcast = res[stringConstant.jsonKeys.podcast.rawValue].object as? [String:Any]
+            let publisher = Podcast?[stringConstant.jsonKeys.publisher.rawValue] as? String
+            let res = podcast(title_original: title_original, thumbnail: thumbnail, publisher: publisher, description_highlighted: description_highlighted, id: id)
             returnValue.append(res)
         }
         return returnValue

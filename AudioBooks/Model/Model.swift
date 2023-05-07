@@ -1,8 +1,8 @@
 import Foundation
 struct listing {
-    var results:[result]?
+    var podcasts:[podcast]?
 }
-struct result {
+struct podcast {
     var title_original: String?
     var thumbnail: String?
     var publisher: String?

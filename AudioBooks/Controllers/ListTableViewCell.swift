@@ -9,7 +9,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteLabel: UILabel!
     
     // MARK: - Setup
-    func config(podcast: result?) {
+    func config(podcast: podcast?) {
         imageDownload(from: podcast?.thumbnail) { image in
             DispatchQueue.main.async {
                 self.listImageView.image = image
