@@ -37,7 +37,7 @@ class  APICaller {
     /**
      This functions takes JSON and returns an array of `result`.
      */
-    func JsonToListing(from json: JSON)-> [result]{
+    func JsonToListing(from json: JSON) -> [result] {
         var returnValue = [result]()
         let results  = json[stringConstant.jsonKeys.results.rawValue].arrayValue
         for res in results {

@@ -35,7 +35,7 @@ class ListViewController: UIViewController {
     }
     
     // MARK: - Setup
-    func setupActivity(isRunning :Bool = false) {
+    func setupActivity(isRunning: Bool = false) {
         if isRunning {
             activityIndicator.stopAnimating()
         } else {

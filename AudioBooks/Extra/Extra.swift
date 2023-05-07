@@ -38,12 +38,12 @@ struct stringConstant {
         case Favourite
     }
 }
-func imageDownload(from urlString: String?,completion:  @escaping (UIImage?)->Void) {
+func imageDownload(from urlString: String?,completion: @escaping (UIImage?) -> Void) {
     if let imageUrlString = urlString,
-       let imageURL = URL(string: imageUrlString){
+       let imageURL = URL(string: imageUrlString) {
         URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             guard let imageData = data else { return }
-            guard error == nil else {return}
+            guard error == nil else { return }
             completion(UIImage(data: imageData))
         }.resume()
     }

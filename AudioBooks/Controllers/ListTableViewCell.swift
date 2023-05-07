@@ -9,17 +9,17 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteLabel: UILabel!
     
     // MARK: - Setup
-    func config(podcast:result?) {
+    func config(podcast: result?) {
         imageDownload(from: podcast?.thumbnail) { image in
             DispatchQueue.main.async {
                 self.listImageView.image = image
             }
         }
-        self.titleLabel.text = podcast?.title_original ?? ""
-        self.publisherLabel.text = podcast?.publisher
-        self.favoriteLabel.text = podcast?.isFavorite ?? false ? stringConstant.word.Favourited.rawValue : ""
-        self.favoriteLabel.textColor = .red
+        titleLabel.text = podcast?.title_original ?? ""
+        publisherLabel.text = podcast?.publisher
+        favoriteLabel.text = podcast?.isFavorite ?? false ? stringConstant.word.Favourited.rawValue : ""
+        favoriteLabel.textColor = .red
         publisherLabel.textColor = .gray
-        self.listImageView.layer.cornerRadius = 12
+        listImageView.layer.cornerRadius = 12
     }
 }
