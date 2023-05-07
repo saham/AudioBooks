@@ -2,6 +2,9 @@ import Foundation
 import PodcastAPI
 class  APICaller {
    public var isPaging:Bool = false
+    /**
+     Fetches data from a public API. It returns data if succeed or error otherwise
+     */
     func fetchData(completion: @escaping(Result<listing, Error>) -> Void) {
         isPaging = true
         var JSONResult = [result]()
@@ -31,6 +34,9 @@ class  APICaller {
             }
         }
     }
+    /**
+     This functions takes JSON and returns an array of `result`.
+     */
     func JsonToListing(from json: JSON)-> [result]{
         var returnValue = [result]()
         let results  = json[stringConstant.jsonKeys.results.rawValue].arrayValue

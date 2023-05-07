@@ -1,6 +1,9 @@
 import Foundation
 import UIKit
 extension String {
+    /**
+     .String has HTML Tags and it returns the HTML text as an NSAttributedString
+     */
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return nil }
         do {
