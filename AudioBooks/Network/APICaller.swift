@@ -21,7 +21,7 @@ class  APICaller {
                 case PodcastApiError.authenticationError:
                     print("wrong api key")
                 default:
-                    print("unknown error")
+                    print(error.localizedDescription)
                 }
             } else {
                 if let json = response.toJson() {
