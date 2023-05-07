@@ -22,7 +22,11 @@ extension String {
 }
 
 class  APICaller {
-    func fetchData(completion: @escaping(Result<listing, Error>) -> Void) {
+    var isPaging:Bool = false
+    func fetchData(paginating: Bool = false, completion: @escaping(Result<listing, Error>) -> Void) {
+        if paginating {
+            isPaging = true
+        }
         var JSONResult = [result]()
         var JSONListings = listing()
         let apiKey = ProcessInfo.processInfo.environment["LISTEN_API_KEY", default: ""]
@@ -30,7 +34,6 @@ class  APICaller {
         var parameters: [String: String] = [:]
         parameters["q"] = "startup"
         parameters["sort_by_date"] = "1"
-        
         client.search(parameters: parameters) { response in
             if let error = response.error {
                 switch (error) {
@@ -46,6 +49,9 @@ class  APICaller {
                     JSONResult = self.JsonToListing(from: json)
                     JSONListings.results = JSONResult
                     completion(.success(JSONListings))
+                    if paginating {
+                        self.isPaging = false
+                    }
                 }
             }
         }
