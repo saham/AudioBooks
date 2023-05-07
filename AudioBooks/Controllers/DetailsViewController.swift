@@ -34,6 +34,7 @@ class DetailsViewController: UIViewController {
         titleLabel.text = podcast?.title_original
         publisherLabel.text = podcast?.publisher
         detailImageView.layer.cornerRadius = 12
+        // Mobile does not modify the received HTML text. It's left to backend to add formatting tags to the string
         descriptionTextView.attributedText = podcast?.description_highlighted?.htmlToAttributedString
         imageDownload(from: podcast?.thumbnail) { image in
             DispatchQueue.main.async {

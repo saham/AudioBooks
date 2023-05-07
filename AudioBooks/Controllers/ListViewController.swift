@@ -47,6 +47,10 @@ class ListViewController: UIViewController {
 }
 // MARK: - ScrollView
 extension ListViewController: UIScrollViewDelegate {
+    /**
+     When user scrolls the end of tableView, we reload another set of data
+     - Since we get 10 listings at a time, we add all 10 listings to our model
+     */
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (tableView.contentSize.height  + 200  - scrollView.frame.size.height) {
