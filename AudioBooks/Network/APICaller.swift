@@ -5,9 +5,8 @@ class  APICaller {
     /**
      Fetches data from a public API. It returns data if succeed or error otherwise
      */
-    func fetchData(completion: @escaping(Result<listing, Error>) -> Void) {
+    func fetchData(completion: @escaping(Result<[podcast]?, Error>) -> Void) {
         isPaging = true
-        var AllListings = listing()
         let apiKey = ProcessInfo.processInfo.environment[stringConstant.jsonKeys.LISTEN_API_KEY.rawValue, default: ""]
         let client = PodcastAPI.Client(apiKey: apiKey, synchronousRequest: true)
         var parameters: [String: String] = [:]
@@ -25,8 +24,7 @@ class  APICaller {
                 }
             } else {
                 if let json = response.toJson() {
-                    AllListings.podcasts = self.JsonToListing(from: json)
-                    completion(.success(AllListings))
+                    completion(.success(self.JsonToListing(from: json)))
                     self.isPaging = false
                 }
             }
